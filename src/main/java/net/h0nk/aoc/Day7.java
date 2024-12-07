@@ -31,6 +31,9 @@ public class Day7 {
                                 for (int j = 1; j < list.size() - 1; j++) {
                                     total = symbols[temp % symbols.length].applyAsLong(total, list.get(j + 1));
                                     temp /= symbols.length;
+                                    if(total > list.getFirst()) {
+                                        return 0;
+                                    }
                                 }
                                 return list.getFirst() == total ? list.getFirst() : 0;
                             })
